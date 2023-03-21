@@ -1,6 +1,6 @@
 // import '../styles/globals.css'
 
-const Movie = ({title, index , overview, popularity,vote_average, release_date,genre_ids , poster_path }) => {
+const Movie = ({title, index , overview, popularity,vote_average, release_date, poster_path }) => {
     const IMAGES_API = 'https://image.tmdb.org/t/p/w500';
 
     return (
