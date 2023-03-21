@@ -6,26 +6,27 @@ import Movie from '../src/components/movie';
 // const {serverRuntimeConfig, publicRuntimeConfig} = getConfig ()
 
 export default function Home(initialData) {
-  // const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([])
   // const [formInput, setFormInputs] = useState({})
-  // const [searchTerm, setSearchTerm] = useState ('')
+  const [searchTerm, setSearchTerm] = useState ('')
 
-  // useEffect(() => {
-  //   setSearchResults(initialData.trendingMovies.results)
-  // }, [initialData])
+  useEffect(() => {
+    setSearchResults(initialData.trendingMovies.results)
+  }, [initialData])
 
-  // const handleInputs = (event) => {
-  //   let {name, value} =event.target
-  //   setFormInputs({...formInputs, [name]: value});
-  //   setSearchTerm(event.target.value);
-  // }
+  const handleInputs = (event) => {
+    let {name, value} =event.target
+    // setFormInputs({...formInputs, [name]: value});
+    setSearchTerm(event.target.value);
+  }
 
-  // const search = async (event) => {
-  //   event.preventDefault()
-  //   let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}`)
-  //   movies = await movies.json()
-  //   setSearchResults(movies.results)
-  // }
+  const search = async (event) => {
+    event.preventDefault()
+    let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=71b1711cab2e63d7f8e5be8ffd7ab9c5&query=${searchTerm}`)
+    movies = await movies.json()
+    setSearchResults(movies.results)
+
+  }
 
 
   return (
@@ -33,20 +34,22 @@ export default function Home(initialData) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <div>
-        <form onSubmit={search}>
-          <input className="search" name="searchTerm" value={searchTerm} onChange={handleInputs} type="text" required />
-          <button className='btn-search'>search</button>
-        </form>
-      </div> */}
-      <div className='wm'>
+      
+              <div className='wm'>
                 Samuel Uno XI RPL
               </div>
        <div className='movieTitle'>Trendings Movies</div>
+       <div className='searchMovie'>
+        <form onSubmit={search}>
+          <input className="search" name="searchTerm" value={searchTerm} onChange={handleInputs} type="text" placeholder='Cari film.....' required />
+          {/* <button className='btn-search'>🔍</button> */}
+        </form>
+      </div>
       <div className='movie-search-result-grid'>
-          {initialData.trendingMovies.results.map((each, index) => {
+          {searchResults.map((each, index) => {
             return(
               <Movie
+              key={each.id}
               index={each.id}
               title={each.title}
               poster_path={each.poster_path}

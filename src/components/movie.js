@@ -5,7 +5,7 @@ const Movie = ({title, index , overview, popularity,vote_average, release_date, 
 
     return (
         <div className="movie" key={index}> 
-            <h3>{title}</h3>
+            <h3 className="movie-title">{title}</h3>
             <img src={IMAGES_API + poster_path} alt={title}/>
             <div className="movie-overview">{overview}</div>
             <div className="movie-release">release : {release_date}</div>

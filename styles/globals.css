@@ -34,8 +34,14 @@ ul {
 }
 
 button {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
+  /* padding: 10px 20px; */
+  border-radius: 20px;
+  font-size: 35px;
+  background-color: transparent;
+  border: 0px;
+}
+button:hover{
+  background-color: rgb(5, 255, 105);
 }
 
 
@@ -49,6 +55,7 @@ button {
   text-align: center;
   font-size: 35px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 
@@ -66,17 +73,27 @@ button {
   background-color: rgb(224, 29, 61);
   color: black;
 } */
-/* .movieSearch{
-  height: 60px;
+.search{
+  background-color: beige;
+  /* border-radius: 11px; */
+  border: 0px;
+  border-bottom: solid 2px red;
+  height: 40px;
   font-size: 24px;
-  margin-bottom: 45px;
-  width: 500px;
-} */
+  margin-bottom: 4px;
+  width: 400px;
+  margin-left: 37%;
+}
+.searchMovie{
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 .movie{
   width: 300px;
-  margin: 20px;
+  margin: 15px;
   position: relative;
   overflow: hidden;
   background-color: rgb(220, 185, 140);
@@ -97,6 +114,9 @@ button {
   background-color: black;
   color: white;
 
+ }
+ .movie-title{
+  text-align: center;
  }
 
  .movie:hover .movie-overview{
