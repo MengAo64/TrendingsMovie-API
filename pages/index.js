@@ -22,7 +22,7 @@ export default function Home(initialData) {
 
   const search = async (event) => {
     event.preventDefault()
-    let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
+    let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}`)
     movies = await movies.json()
     setSearchResults(movies.results)
   }
