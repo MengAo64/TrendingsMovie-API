@@ -1,18 +1,18 @@
 import Head from 'next/head';
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 import { useEffect, useState } from 'react';
 import Movie from '../src/components/movie';
 
-const {serverRuntimeConfig, publicRuntimeConfig} = getConfig ()
+// const {serverRuntimeConfig, publicRuntimeConfig} = getConfig ()
 
 export default function Home(initialData) {
-  const [searchResults, setSearchResults] = useState([])
-  const [formInput, setFormInputs] = useState({})
-  const [searchTerm, setSearchTerm] = useState ('')
+  // const [searchResults, setSearchResults] = useState([])
+  // const [formInput, setFormInputs] = useState({})
+  // const [searchTerm, setSearchTerm] = useState ('')
 
-  useEffect(() => {
-    setSearchResults(initialData.trendingMovies.results)
-  }, [initialData])
+  // useEffect(() => {
+  //   setSearchResults(initialData.trendingMovies.results)
+  // }, [initialData])
 
   // const handleInputs = (event) => {
   //   let {name, value} =event.target
@@ -47,7 +47,7 @@ export default function Home(initialData) {
       </div> */}
 
       <div className='movie-search-result-grid'>
-          {searchResults.map((each, index) => {
+          {initialData.trendingMovies.results.map((each, index) => {
             return(
               <Movie
               index={each.id}
