@@ -14,18 +14,18 @@ export default function Home(initialData) {
     setSearchResults(initialData.trendingMovies.results)
   }, [initialData])
 
-  const handleInputs = (event) => {
-    let {name, value} =event.target
-    setFormInputs({...formInputs, [name]: value});
-    setSearchTerm(event.target.value);
-  }
+  // const handleInputs = (event) => {
+  //   let {name, value} =event.target
+  //   setFormInputs({...formInputs, [name]: value});
+  //   setSearchTerm(event.target.value);
+  // }
 
-  const search = async (event) => {
-    event.preventDefault()
-    let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}`)
-    movies = await movies.json()
-    setSearchResults(movies.results)
-  }
+  // const search = async (event) => {
+  //   event.preventDefault()
+  //   let movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}`)
+  //   movies = await movies.json()
+  //   setSearchResults(movies.results)
+  // }
 
 
   return (
@@ -67,7 +67,7 @@ export default function Home(initialData) {
 }
 
 export async function getServerSideProps(context) {
-  let trendingMovies = await fetch (`https://api.themoviedb.org/3/trending/movie/day?api_key=${serverRuntimeConfig.apiKey}`)
+  let trendingMovies = await fetch (`https://api.themoviedb.org/3/trending/movie/day?api_key=71b1711cab2e63d7f8e5be8ffd7ab9c5`)
   trendingMovies = await trendingMovies.json()
 
   console.log(trendingMovies)
