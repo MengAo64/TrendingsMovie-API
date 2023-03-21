@@ -36,3 +36,35 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
+.movie img {
+  max-width: 100%;
+  max-height: 450px;
+  border-radius: 20px;
+}
+
+.movieTitle {
+  text-align: center;
+}
+
+
+
+.movieContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.movieWrapper{
+  width: 500px;
+  background-color: aqua;
+  color: black;
+}
+.movieSearch{
+  height: 60px;
+  font-size: 24px;
+  margin-bottom: 45px;
+  width: 500px;
+}
+
