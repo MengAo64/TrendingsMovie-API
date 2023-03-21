@@ -31,33 +31,36 @@ export default function Home(initialData) {
   return (
     <div className="container">
       <Head>
+        <div className='wm'>
+          Samuel Uno XI RPL
+        </div>
         <div className='movieTitle'>Trendings Movies</div>
         
         <link rel="icon" href="/favicon.ico" />
         <link rel='stylesheet' href='styles.css'/>
       </Head>
-      <div>
+      {/* <div>
         <form onSubmit={search}>
           <input className="search" name="searchTerm" value={searchTerm} onChange={handleInputs} type="text" required />
           <button className='btn-search'>search</button>
         </form>
-      </div>
+      </div> */}
 
       <div className='movie-search-result-grid'>
-        {searchResults.map((each, index) => {
-          return(
-            <Movie
-            index={each.id}
-            title={each.title}
-            poster_path={each.poster_path}
-            overview={each.overview}
-            release_date={each.release_date}
-            popularity={each.popularity}
-            vote_average={each.vote_average}
+          {searchResults.map((each, index) => {
+            return(
+              <Movie
+              index={each.id}
+              title={each.title}
+              poster_path={each.poster_path}
+              overview={each.overview}
+              release_date={each.release_date}
+              popularity={each.popularity}
+              vote_average={each.vote_average}
 
-            />
-          )
-        })}
+              />
+            )
+          })}
       </div>
     </div>
   )
