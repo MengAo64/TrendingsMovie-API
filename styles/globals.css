@@ -79,7 +79,7 @@ button {
   margin: 20px;
   position: relative;
   overflow: hidden;
-  background-color: rgb(186, 158, 121);
+  background-color: rgb(220, 185, 140);
  }
  .movie-search-result-grid{
   display: flex;

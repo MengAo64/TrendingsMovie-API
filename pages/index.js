@@ -31,13 +31,7 @@ export default function Home(initialData) {
   return (
     <div className="container">
       <Head>
-        <div className='wm'>
-          Samuel Uno XI RPL
-        </div>
-        <div className='movieTitle'>Trendings Movies</div>
-        
         <link rel="icon" href="/favicon.ico" />
-        <link rel='stylesheet' href='styles.css'/>
       </Head>
       {/* <div>
         <form onSubmit={search}>
@@ -45,7 +39,10 @@ export default function Home(initialData) {
           <button className='btn-search'>search</button>
         </form>
       </div> */}
-
+      <div className='wm'>
+                Samuel Uno XI RPL
+              </div>
+       <div className='movieTitle'>Trendings Movies</div>
       <div className='movie-search-result-grid'>
           {initialData.trendingMovies.results.map((each, index) => {
             return(
@@ -66,7 +63,7 @@ export default function Home(initialData) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   let trendingMovies = await fetch (`https://api.themoviedb.org/3/trending/movie/day?api_key=71b1711cab2e63d7f8e5be8ffd7ab9c5`)
   trendingMovies = await trendingMovies.json()
 
